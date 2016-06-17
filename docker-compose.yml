@@ -1,11 +1,11 @@
 compile: &defaults
   build: .
   volumes:
-    - .:/home/mruby/code:rw
+    - .:/home/mruby/code/:rw
   command: rake compile
 test:
   <<: *defaults
-  command: rake test
+  command: rake test --trace
 bintest:
   <<: *defaults
   command: rake test:bintest
